@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gcd-model>
+    <algebraic-variables>
+        <algVar>
+            <name>c</name>
+            <parameter>t</parameter>
+            <function>-spar[t] + l[t] w[t]</function>
+            <plotColor>Cyan</plotColor>
+            <plotLineStyle></plotLineStyle>
+            <plotThickness>2.0</plotThickness>
+        </algVar>
+        <algVar>
+            <name>y</name>
+            <parameter>t</parameter>
+            <function>β k[t]^(1 - α) l[t]^α</function>
+            <description>BIP</description>
+            <plotColor>Red</plotColor>
+            <plotThickness>3.0</plotThickness>
+        </algVar>
+    </algebraic-variables>
+    <agents>
+        <agent>
+            <name>F</name>
+            <function>-(α β k[t]^(1 - α) l[t]^(-1 + α) - w[t])^2/2 - (i1 - inv[t] + i2 y[t])^2/2</function>
+            <description>Nutzenfunktion Firma</description>
+            <plotColor></plotColor>
+            <plotLineStyle></plotLineStyle>
+        </agent>
+        <agent>
+            <name>H</name>
+            <function>-(ldach - l[t])^2/2 - (spardachl l[t] + spardachprofit profit[t] - spar[t])^2/2</function>
+            <description>Nutzenfunktion Haushalt</description>
+            <plotColor></plotColor>
+            <plotLineStyle></plotLineStyle>
+        </agent>
+    </agents>
+    <constraints>
+        <constraint>
+            <function>-profit[t] - l[t] w[t] + y[t]</function>
+        </constraint>
+        <constraint>
+            <function>inv[t] - spar[t]</function>
+        </constraint>
+        <constraint>
+            <function>inv[t] - k'[t]</function>
+        </constraint>
+    </constraints>
+    <variables>
+        <variable>
+            <name>inv</name>
+            <startValue>0.1</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+            <initialConditions>inv0</initialConditions>
+            <plotColor>Black</plotColor>
+            <plotLineStyle>Dashed</plotLineStyle>
+            <plotThickness>3.0</plotThickness>
+        </variable>
+        <variable>
+            <name>k</name>
+            <description>Kapital</description>
+            <startValue>1.5</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>3.0</maxValue>
+            <initialConditions>k0</initialConditions>
+            <plotColor>Magenta</plotColor>
+            <plotThickness>2.0</plotThickness>
+        </variable>
+        <variable>
+            <name>l</name>
+            <description>Arbeit</description>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+            <initialConditions>l0</initialConditions>
+            <plotColor>Green</plotColor>
+            <plotThickness>2.0</plotThickness>
+        </variable>
+        <variable>
+            <name>profit</name>
+            <initialConditions>-(l0 w0) + k0^(1 - α) l0^α β</initialConditions>
+            <plotColor>Orange</plotColor>
+            <plotThickness>2.0</plotThickness>
+        </variable>
+        <variable>
+            <name>spar</name>
+            <initialConditions>inv0</initialConditions>
+            <plotColor>Blue</plotColor>
+            <plotLineStyle>Dashed</plotLineStyle>
+            <plotThickness>3.0</plotThickness>
+        </variable>
+        <variable>
+            <name>w</name>
+            <description>Lohn</description>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+            <initialConditions>w0</initialConditions>
+            <plotColor>Brown</plotColor>
+            <plotThickness>2.0</plotThickness>
+        </variable>
+    </variables>
+    <parameters>
+        <parameter>
+            <name>\[Alpha]</name>
+            <description>Exponent bei Arbeit</description>
+            <startValue>0.3</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>1.0</maxValue>
+        </parameter>
+        <parameter>
+            <name>\[Beta]</name>
+            <description>Technologiefaktor Produktionsfunktion</description>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>1.0</maxValue>
+        </parameter>
+        <parameter>
+            <name>i1</name>
+            <startValue>0.1</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>1.0</maxValue>
+        </parameter>
+        <parameter>
+            <name>i2</name>
+            <startValue>0.1</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>1.0</maxValue>
+        </parameter>
+        <parameter>
+            <name>ldach</name>
+            <description>angestrebte Arbeitszeit</description>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+        </parameter>
+        <parameter>
+            <name>spardachl</name>
+            <startValue>0.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>1.0</maxValue>
+        </parameter>
+        <parameter>
+            <name>spardachprofit</name>
+            <startValue>0.2</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>1.0</maxValue>
+        </parameter>
+    </parameters>
+    <change-mu>
+        <mu>
+            <name>\[Mu]Finv</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>6.0</maxValue>
+        </mu>
+        <mu>
+            <name>\[Mu]Fk</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>6.0</maxValue>
+        </mu>
+        <mu>
+            <name>\[Mu]Fl</name>
+            <startValue>0.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>6.0</maxValue>
+        </mu>
+        <mu>
+            <name>\[Mu]Fw</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>6.0</maxValue>
+        </mu>
+        <mu>
+            <name>\[Mu]Hl</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>6.0</maxValue>
+        </mu>
+        <mu>
+            <name>\[Mu]Hprofit</name>
+            <startValue>0.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>6.0</maxValue>
+        </mu>
+        <mu>
+            <name>\[Mu]Hspar</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>6.0</maxValue>
+        </mu>
+    </change-mu>
+    <plots>
+        <plot>
+            <name>Agent F</name>
+            <plotStyle>PLOTSTYLEAgentF</plotStyle>
+            <plotParameter>{t, 0, tmax}</plotParameter>
+            <plotRange>6</plotRange>
+            <showPlotLabels>true</showPlotLabels>
+            <showLegendLabels>true</showLegendLabels>
+            <algebraic-variables/>
+            <agents>
+                <agent>
+                    <addDepended>true</addDepended>
+                    <name>F</name>
+                </agent>
+            </agents>
+            <variables/>
+        </plot>
+        <plot>
+            <name>Agent H</name>
+            <plotStyle>PLOTSTYLEAgentH</plotStyle>
+            <plotParameter>{t, 0, tmax}</plotParameter>
+            <plotRange>6</plotRange>
+            <showPlotLabels>true</showPlotLabels>
+            <showLegendLabels>true</showLegendLabels>
+            <algebraic-variables>
+                <algVar>
+                    <addDepended>true</addDepended>
+                    <name>c</name>
+                </algVar>
+            </algebraic-variables>
+            <agents>
+                <agent>
+                    <addDepended>true</addDepended>
+                    <name>H</name>
+                </agent>
+            </agents>
+            <variables/>
+        </plot>
+    </plots>
+    <mathematicaNDSolveFile>D:\Dropbox\1a Principia Ökonomika\2. Ökonomiae Prinzipia Mathematica\1a Fassungen Bd 2 ab 18.11.21\Publikationen\Modelle ABC\Modelle ABC GCDkonfigurator\SEN\Modell SEN Version 10.ndsolve.nb</mathematicaNDSolveFile>
+    <mathematicaModelicaFile>D:\Dropbox\1a Principia Ökonomika\2. Ökonomiae Prinzipia Mathematica\1a Fassungen Bd 2 ab 18.11.21\Publikationen\Modelle ABC\Modelle ABC GCDkonfigurator\SEN\Modell SEN Version 10.modelica.nb</mathematicaModelicaFile>
+    <mathematicaControlFile>D:\Dropbox\1a Principia Ökonomika\2. Ökonomiae Prinzipia Mathematica\1a Fassungen Bd 2 ab 18.11.21\Publikationen\Modelle ABC\Modelle ABC GCDkonfigurator\SEN\Modell SEN Version 10.control.nb</mathematicaControlFile>
+    <ndSolveMethod>{IndexReduction -&gt; {True, ConstraintMethod -&gt; Projection}}</ndSolveMethod>
+</gcd-model>

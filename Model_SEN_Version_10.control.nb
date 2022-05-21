@@ -1,0 +1,49 @@
+Notebook[{
+Cell[
+RowBox[{RowBox[{ClearAll,"[","\"\<Global`*\>\"","]"}]}], "Input"],
+Cell[
+BoxData[
+RowBox[{RowBox[List[RowBox[List["SetOptions", "[", RowBox[List["Plot", ",", RowBox[List["ImageSize", "\[Rule]", "350"]]]], "]"]], ";"]], "\[IndentingNewLine]"
+}]], "Input"],
+Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"(*",RowBox[{"Algebraische"," ","Variablen"}],"*)"}]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List[RowBox[List["c", "[", "t", "]"]], "\[Rule]", RowBox[List[RowBox[List["-", RowBox[List["spar", "[", "t", "]"]]]], "+", RowBox[List[RowBox[List["l", "[", "t", "]"]], " ", RowBox[List["w", "[", "t", "]"]]]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List[RowBox[List["y", "[", "t", "]"]], "\[Rule]", RowBox[List["\[Beta]", " ", SuperscriptBox[RowBox[List["k", "[", "t", "]"]], RowBox[List["1", "-", "\[Alpha]"]]], " ", SuperscriptBox[RowBox[List["l", "[", "t", "]"]], "\[Alpha]"]]]]]}],"\[IndentingNewLine]"
+}]], "Input"],
+Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"(*",RowBox[{"Agenten"," ","/"," ","Nutzenfunktionen"}],"*)"}]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["F", ":=", RowBox[List[RowBox[List[RowBox[List["-", FractionBox["1", "2"]]], " ", SuperscriptBox[RowBox[List["(", RowBox[List[RowBox[List["\[Alpha]", " ", "\[Beta]", " ", SuperscriptBox[RowBox[List["k", "[", "t", "]"]], RowBox[List["1", "-", "\[Alpha]"]]], " ", SuperscriptBox[RowBox[List["l", "[", "t", "]"]], RowBox[List[RowBox[List["-", "1"]], "+", "\[Alpha]"]]]]], "-", RowBox[List["w", "[", "t", "]"]]]], ")"]], "2"]]], "-", RowBox[List[FractionBox["1", "2"], " ", SuperscriptBox[RowBox[List["(", RowBox[List["i1", "-", RowBox[List["inv", "[", "t", "]"]], "+", RowBox[List["i2", " ", RowBox[List["y", "[", "t", "]"]]]]]], ")"]], "2"]]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["H", ":=", RowBox[List[RowBox[List[RowBox[List["-", FractionBox["1", "2"]]], " ", SuperscriptBox[RowBox[List["(", RowBox[List["ldach", "-", RowBox[List["l", "[", "t", "]"]]]], ")"]], "2"]]], "-", RowBox[List[FractionBox["1", "2"], " ", SuperscriptBox[RowBox[List["(", RowBox[List[RowBox[List["spardachl", " ", RowBox[List["l", "[", "t", "]"]]]], "+", RowBox[List["spardachprofit", " ", RowBox[List["profit", "[", "t", "]"]]]], "-", RowBox[List["spar", "[", "t", "]"]]]], ")"]], "2"]]]]]]]}],"\[IndentingNewLine]"
+}]], "Input"],
+Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"(*",RowBox[{"Zwangsbedingungen"}],"*)"}]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["1", ":=", RowBox[List[RowBox[List["-", RowBox[List["profit", "[", "t", "]"]]]], "-", RowBox[List[RowBox[List["l", "[", "t", "]"]], " ", RowBox[List["w", "[", "t", "]"]]]], "+", RowBox[List["y", "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["2", ":=", RowBox[List[RowBox[List["inv", "[", "t", "]"]], "-", RowBox[List["spar", "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["3", ":=", RowBox[List[RowBox[List["inv", "[", "t", "]"]], "-", RowBox[List[SuperscriptBox["k", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+}]], "Input"],
+Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"(*",RowBox[{"Anfangsbedingungen"," ","und"," ","Werte"}],"*)"}]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[{"init","=",RowBox[{"{",RowBox[{"\[IndentingNewLine]"
+,RowBox[{RowBox[{"inv","[",RowBox[{"0"}],"]"}],"==","inv0"}],",",RowBox[{RowBox[{"k","[",RowBox[{"0"}],"]"}],"==","k0"}],",",RowBox[{RowBox[{"l","[",RowBox[{"0"}],"]"}],"==","l0"}],",",RowBox[{RowBox[{"profit","[",RowBox[{"0"}],"]"}],"==",RowBox[List[RowBox[List["-", RowBox[List["(", RowBox[List["l0", " ", "w0"]], ")"]]]], "+", RowBox[List[SuperscriptBox["k0", RowBox[List["1", "-", "\[Alpha]"]]], " ", SuperscriptBox["l0", "\[Alpha]"], " ", "\[Beta]"]]]]}],",","\[IndentingNewLine]"
+,RowBox[{RowBox[{"spar","[",RowBox[{"0"}],"]"}],"==","inv0"}],",",RowBox[{RowBox[{"w","[",RowBox[{"0"}],"]"}],"==","w0"}],"\[IndentingNewLine]"
+}],"}"}],";"}]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[{"{",RowBox[{"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{inv0,",","0.1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{k0,",","1.5"}],"}"}],",","0",",","3"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{l0,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{w0,",","1"}],"}"}],",","0",",","2"}],"}"}],",","\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Finv,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Fk,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Fl,",","0"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Fw,",","0.7"}],"}"}],",","0",",","2"}],"}"}],",","\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Hl,",","3"}],"}"}],",","0",",","3"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Hprofit,",","0"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Hspar,",","1"}],"}"}],",","0",",","2"}],"}"}],",","\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Alpha],",","0.3"}],"}"}],",","0",",","1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Beta],",","1"}],"}"}],",","0",",","1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{i1,",","0.1"}],"}"}],",","0",",","1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{i2,",","0.1"}],"}"}],",","0",",","1"}],"}"}],",","\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{ldach,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{spardachl,",","0"}],"}"}],",","0",",","1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{spardachprofit,",","0.7"}],"}"}],",","0",",","1"}],"}"}],",","\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{tmax,",",30}],"}"}],",",0,",",100}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{plotmax,",",2.5}],"}"}],",",0,",",20}],"}"}],"\[IndentingNewLine]"
+}],"}"}]}],"\[IndentingNewLine]"
+}]], "Input"]
+}]

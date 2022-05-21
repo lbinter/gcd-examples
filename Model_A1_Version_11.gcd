@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gcd-model>
+    <algebraic-variables>
+        <algVar>
+            <name>dp</name>
+            <parameter>t</parameter>
+            <function>dpdach k[t]</function>
+            <description>Abschreibung</description>
+            <plotColor>Magenta</plotColor>
+            <plotLineStyle></plotLineStyle>
+            <plotThickness>1.0</plotThickness>
+        </algVar>
+        <algVar>
+            <name>inv</name>
+            <parameter>t</parameter>
+            <function>k'[t]</function>
+            <description>Investition</description>
+            <plotColor>Magenta</plotColor>
+            <plotThickness>1.0</plotThickness>
+        </algVar>
+        <algVar>
+            <name>y</name>
+            <parameter>t</parameter>
+            <function>\[Beta] k[t]^(1 - \[Alpha]) l[t]^\[Alpha]</function>
+            <description>BIP</description>
+            <plotColor>Red</plotColor>
+            <plotThickness>3.0</plotThickness>
+        </algVar>
+    </algebraic-variables>
+    <agents>
+        <agent>
+            <name>F</name>
+            <function>p[t] y[t] - w[t] l[t] - (sdach - s[t])^2</function>
+            <description>Nutzenfunktion Firma</description>
+            <plotColor>Black</plotColor>
+            <plotLineStyle>Dotted</plotLineStyle>
+            <plotThickness>1.0</plotThickness>
+        </agent>
+        <agent>
+            <name>H</name>
+            <function>cH[t]^γ - (ldach - l[t])^2 - (mHdach - mH[t])^2</function>
+            <description>Nutzenfunktion Haushalt</description>
+            <plotColor>Purple</plotColor>
+            <plotLineStyle>Dotted</plotLineStyle>
+            <plotThickness>1.0</plotThickness>
+        </agent>
+    </agents>
+    <constraints>
+        <constraint>
+            <function>p[t] cH[t] - w[t] l[t] - mF'[t]</function>
+            <description>Geld F</description>
+        </constraint>
+        <constraint>
+            <function>w[t] l[t] - p[t] cH[t] - mH'[t]</function>
+            <description>Geld H</description>
+        </constraint>
+        <constraint>
+            <function>y[t] - cH[t] - k'[t] - s'[t] - dp[t]</function>
+            <description>Gut F</description>
+        </constraint>
+    </constraints>
+    <variables>
+        <variable>
+            <name>cH</name>
+            <initialConditions>k0^(1 - α) l0^α β</initialConditions>
+        </variable>
+        <variable>
+            <name>k</name>
+            <description>Kapital</description>
+            <startValue>1.5</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>3.0</maxValue>
+            <initialConditions>k0</initialConditions>
+            <plotColor>Magenta</plotColor>
+            <plotThickness>2.0</plotThickness>
+        </variable>
+        <variable>
+            <name>l</name>
+            <description>Arbeit</description>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+            <initialConditions>l0</initialConditions>
+            <plotColor>Green</plotColor>
+            <plotThickness>2.0</plotThickness>
+        </variable>
+        <variable>
+            <name>mF</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+            <initialConditions>mF0</initialConditions>
+        </variable>
+        <variable>
+            <name>mH</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+            <initialConditions>mH0</initialConditions>
+        </variable>
+        <variable>
+            <name>p</name>
+            <description>Preis</description>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+            <initialConditions>p0</initialConditions>
+            <plotColor>Blue</plotColor>
+            <plotThickness>2.0</plotThickness>
+        </variable>
+        <variable>
+            <name>s</name>
+            <description>Lagerstand</description>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+            <initialConditions>s0</initialConditions>
+            <plotColor>Pink</plotColor>
+            <plotThickness>2.0</plotThickness>
+        </variable>
+        <variable>
+            <name>w</name>
+            <description>Lohn</description>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+            <initialConditions>w0</initialConditions>
+            <plotColor>Brown</plotColor>
+            <plotThickness>2.0</plotThickness>
+        </variable>
+    </variables>
+    <parameters>
+        <parameter>
+            <name>\[Alpha]</name>
+            <startValue>0.5</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>1.0</maxValue>
+        </parameter>
+        <parameter>
+            <name>\[Beta]</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>1.0</maxValue>
+        </parameter>
+        <parameter>
+            <name>\[Gamma]</name>
+            <startValue>0.25</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>1.0</maxValue>
+        </parameter>
+        <parameter>
+            <name>dpdach</name>
+            <description>Abschreibungsfaktor</description>
+            <startValue>0.1</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>1.0</maxValue>
+        </parameter>
+        <parameter>
+            <name>ldach</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+        </parameter>
+        <parameter>
+            <name>mHdach</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+        </parameter>
+        <parameter>
+            <name>sdach</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+        </parameter>
+    </parameters>
+    <change-mu>
+        <mu>
+            <name>\[Mu]Fk</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+        </mu>
+        <mu>
+            <name>\[Mu]Fl</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+        </mu>
+        <mu>
+            <name>\[Mu]Fp</name>
+            <startValue>0.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+        </mu>
+        <mu>
+            <name>\[Mu]Fs</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+        </mu>
+        <mu>
+            <name>\[Mu]Fw</name>
+            <startValue>0.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+        </mu>
+        <mu>
+            <name>\[Mu]HcH</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+        </mu>
+        <mu>
+            <name>\[Mu]Hl</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+        </mu>
+        <mu>
+            <name>\[Mu]HmH</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+        </mu>
+    </change-mu>
+    <plots>
+        <plot>
+            <name>Agent F</name>
+            <legendLabel></legendLabel>
+            <plotStyle>PLOTSTYLEAgentF</plotStyle>
+            <plotParameter>{t, 0, tmax}</plotParameter>
+            <plotRange>{-plotmax, plotmax}</plotRange>
+            <showPlotLabels>true</showPlotLabels>
+            <showLegendLabels>true</showLegendLabels>
+            <algebraic-variables>
+                <algVar>
+                    <addDepended>false</addDepended>
+                    <name>inv</name>
+                </algVar>
+                <algVar>
+                    <addDepended>true</addDepended>
+                    <name>y</name>
+                </algVar>
+            </algebraic-variables>
+            <agents>
+                <agent>
+                    <addDepended>true</addDepended>
+                    <name>F</name>
+                </agent>
+            </agents>
+            <variables/>
+        </plot>
+        <plot>
+            <name>Agent H</name>
+            <plotStyle>PLOTSTYLEAgentH</plotStyle>
+            <plotParameter>{t, 0, tmax}</plotParameter>
+            <plotRange>{-plotmax, plotmax}</plotRange>
+            <showPlotLabels>true</showPlotLabels>
+            <showLegendLabels>true</showLegendLabels>
+            <algebraic-variables/>
+            <agents>
+                <agent>
+                    <addDepended>true</addDepended>
+                    <name>H</name>
+                </agent>
+            </agents>
+            <variables/>
+        </plot>
+        <plot>
+            <name>Nutzenfunktion H und F</name>
+            <plotStyle>PLOTSTYLENutzenfunktionHundF</plotStyle>
+            <plotParameter>{t, 0, tmax}</plotParameter>
+            <plotRange>{-plotmax, plotmax}</plotRange>
+            <showPlotLabels>true</showPlotLabels>
+            <showLegendLabels>true</showLegendLabels>
+            <algebraic-variables/>
+            <agents>
+                <agent>
+                    <addDepended>false</addDepended>
+                    <name>F</name>
+                </agent>
+                <agent>
+                    <addDepended>false</addDepended>
+                    <name>H</name>
+                </agent>
+            </agents>
+            <variables/>
+        </plot>
+    </plots>
+    <mathematicaNDSolveFile>D:\Dropbox\1a Principia Ökonomika\2. Ökonomiae Prinzipia Mathematica\1a Fassungen Bd 2 ab 18.11.21\Publikationen\Modelle ABC\Modelle ABC GCDkonfigurator\Modell A1\Modell A1 Version 11.ndsolve.nb</mathematicaNDSolveFile>
+    <mathematicaModelicaFile>D:\Dropbox\1a Principia Ökonomika\2. Ökonomiae Prinzipia Mathematica\1a Fassungen Bd 2 ab 18.11.21\Publikationen\Modelle ABC\Modelle ABC GCDkonfigurator\Modell A1\Modell A1 Version 11.modelica.nb</mathematicaModelicaFile>
+    <mathematicaControlFile>D:\Dropbox\1a Principia Ökonomika\2. Ökonomiae Prinzipia Mathematica\1a Fassungen Bd 2 ab 18.11.21\Publikationen\Modelle ABC\Modelle ABC GCDkonfigurator\Modell A1\Modell A1 Version 11.control.nb</mathematicaControlFile>
+    <ndSolveMethod>Automatic</ndSolveMethod>
+</gcd-model>

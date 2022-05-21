@@ -1,0 +1,79 @@
+Notebook[{
+Cell[
+RowBox[{RowBox[{ClearAll,"[","\"\<Global`*\>\"","]"}]}], "Input"],
+Cell[
+BoxData[
+RowBox[{RowBox[List[RowBox[List["SetOptions", "[", RowBox[List["Plot", ",", RowBox[List["ImageSize", "\[Rule]", "350"]]]], "]"]], ";"]], "\[IndentingNewLine]"
+}]], "Input"],
+Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"(*",RowBox[{"Algebraische"," ","Variablen"}],"*)"}]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List[RowBox[List["cGschlange", "[", "t", "]"]], "\[Rule]", RowBox[List[RowBox[List["p", "[", "t", "]"]], " ", RowBox[List["cG", "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List[RowBox[List["dp", "[", "t", "]"]], "\[Rule]", RowBox[List["dpdach", " ", RowBox[List["k", "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List[RowBox[List["inflation", "[", "t", "]"]], "\[Rule]", FractionBox[RowBox[List["ps", "[", "t", "]"]], RowBox[List["p", "[", "t", "]"]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List[RowBox[List["inv", "[", "t", "]"]], "\[Rule]", RowBox[List[SuperscriptBox["k", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List[RowBox[List["taxH", "[", "t", "]"]], "\[Rule]", RowBox[List["\[Tau]H", " ", RowBox[List["l", "[", "t", "]"]], " ", RowBox[List["w", "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List[RowBox[List["y", "[", "t", "]"]], "\[Rule]", RowBox[List["\[Beta]", " ", SuperscriptBox[RowBox[List["k", "[", "t", "]"]], RowBox[List["1", "-", "\[Alpha]"]]], " ", SuperscriptBox[RowBox[List["l", "[", "t", "]"]], "\[Alpha]"]]]]]}],"\[IndentingNewLine]"
+}]], "Input"],
+Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"(*",RowBox[{"Agenten"," ","/"," ","Nutzenfunktionen"}],"*)"}]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["B", ":=", "0"]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["F", ":=", RowBox[List[RowBox[List[RowBox[List["dF", "[", "t", "]"]], " ", RowBox[List["r", "[", "t", "]"]]]], "-", SuperscriptBox[RowBox[List["(", RowBox[List["sdach", "-", RowBox[List["s", "[", "t", "]"]]]], ")"]], "2"], "-", RowBox[List[RowBox[List["l", "[", "t", "]"]], " ", RowBox[List["w", "[", "t", "]"]]]], "+", RowBox[List[RowBox[List["p", "[", "t", "]"]], " ", RowBox[List["y", "[", "t", "]"]]]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["G", ":=", SuperscriptBox[RowBox[List["cG", "[", "t", "]"]], "\[Gamma]G"]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["H", ":=", RowBox[List[SuperscriptBox[RowBox[List["cH", "[", "t", "]"]], "\[Gamma]H"], "-", SuperscriptBox[RowBox[List["(", RowBox[List["ldach", "-", RowBox[List["l", "[", "t", "]"]]]], ")"]], "2"], "-", SuperscriptBox[RowBox[List["(", RowBox[List["mHdach", "-", RowBox[List["mH", "[", "t", "]"]]]], ")"]], "2"], "+", RowBox[List[RowBox[List["aH", "[", "t", "]"]], " ", RowBox[List["r", "[", "t", "]"]]]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["ZB", ":=", RowBox[List[RowBox[List["(", RowBox[List["pdach", "-", FractionBox[RowBox[List["ps", "[", "t", "]"]], RowBox[List["p", "[", "t", "]"]]]]], ")"]], " ", RowBox[List["(", RowBox[List[RowBox[List[RowBox[List["(", RowBox[List["1", "-", "\[Delta]"]], ")"]], " ", RowBox[List["nZB", "[", "t", "]"]]]], "-", RowBox[List["\[Delta]", " ", RowBox[List["r", "[", "t", "]"]]]]]], ")"]]]]]]}],"\[IndentingNewLine]"
+}]], "Input"],
+Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"(*",RowBox[{"Zwangsbedingungen"}],"*)"}]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["1", ":=", RowBox[List[RowBox[List["-", RowBox[List["nH", "[", "t", "]"]]]], "-", RowBox[List[RowBox[List["cH", "[", "t", "]"]], " ", RowBox[List["p", "[", "t", "]"]]]], "+", RowBox[List[RowBox[List["aH", "[", "t", "]"]], " ", RowBox[List["r", "[", "t", "]"]]]], "-", RowBox[List["taxH", "[", "t", "]"]], "+", RowBox[List[RowBox[List["l", "[", "t", "]"]], " ", RowBox[List["w", "[", "t", "]"]]]], "-", RowBox[List[SuperscriptBox["mH", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["2", ":=", RowBox[List[RowBox[List["nF", "[", "t", "]"]], "+", RowBox[List[RowBox[List["cH", "[", "t", "]"]], " ", RowBox[List["p", "[", "t", "]"]]]], "+", RowBox[List[RowBox[List["cG", "[", "t", "]"]], " ", RowBox[List["p", "[", "t", "]"]]]], "+", RowBox[List[RowBox[List["dF", "[", "t", "]"]], " ", RowBox[List["r", "[", "t", "]"]]]], "-", RowBox[List[RowBox[List["l", "[", "t", "]"]], " ", RowBox[List["w", "[", "t", "]"]]]], "-", RowBox[List[SuperscriptBox["mF", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["3", ":=", RowBox[List[RowBox[List["-", RowBox[List["nF", "[", "t", "]"]]]], "+", RowBox[List["nH", "[", "t", "]"]], "+", RowBox[List["nZB", "[", "t", "]"]], "-", RowBox[List[RowBox[List["aH", "[", "t", "]"]], " ", RowBox[List["r", "[", "t", "]"]]]], "-", RowBox[List[RowBox[List["dF", "[", "t", "]"]], " ", RowBox[List["r", "[", "t", "]"]]]], "-", RowBox[List[SuperscriptBox["mB", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["4", ":=", RowBox[List[RowBox[List["-", RowBox[List["nZB", "[", "t", "]"]]]], "-", RowBox[List[SuperscriptBox["rZB", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["5", ":=", RowBox[List[RowBox[List["-", RowBox[List["cH", "[", "t", "]"]]]], "-", RowBox[List["dp", "[", "t", "]"]], "-", RowBox[List["cG", "[", "t", "]"]], "+", RowBox[List["y", "[", "t", "]"]], "-", RowBox[List[SuperscriptBox["k", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]], "-", RowBox[List[SuperscriptBox["s", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["6", ":=", RowBox[List[RowBox[List["nH", "[", "t", "]"]], "-", RowBox[List[SuperscriptBox["aH", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["7", ":=", RowBox[List[RowBox[List["-", RowBox[List["nF", "[", "t", "]"]]]], "-", RowBox[List[SuperscriptBox["dF", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["8", ":=", RowBox[List[RowBox[List["nF", "[", "t", "]"]], "-", RowBox[List["nH", "[", "t", "]"]], "-", RowBox[List["nZB", "[", "t", "]"]], "-", RowBox[List[SuperscriptBox["aB", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]], "-", RowBox[List[SuperscriptBox["dB", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["9", ":=", RowBox[List[RowBox[List["nZB", "[", "t", "]"]], "-", RowBox[List[SuperscriptBox["aZB", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["10", ":=", RowBox[List[RowBox[List["-", RowBox[List["(", RowBox[List[RowBox[List["cG", "[", "t", "]"]], " ", RowBox[List["p", "[", "t", "]"]]]], ")"]]]], "+", RowBox[List["taxH", "[", "t", "]"]], "-", RowBox[List[SuperscriptBox["mG", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["11", ":=", RowBox[List[RowBox[List["ps", "[", "t", "]"]], "-", RowBox[List[SuperscriptBox["p", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+}]], "Input"],
+Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"(*",RowBox[{"Anfangsbedingungen"," ","und"," ","Werte"}],"*)"}]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[{"init","=",RowBox[{"{",RowBox[{"\[IndentingNewLine]"
+,RowBox[{RowBox[{"aB","[",RowBox[{"0"}],"]"}],"==","aB0"}],",",RowBox[{RowBox[{"aH","[",RowBox[{"0"}],"]"}],"==","aH0"}],",",RowBox[{RowBox[{"aZB","[",RowBox[{"0"}],"]"}],"==","aZB0"}],",",RowBox[{RowBox[{"cG","[",RowBox[{"0"}],"]"}],"==","cG0"}],",","\[IndentingNewLine]"
+,RowBox[{RowBox[{"cH","[",RowBox[{"0"}],"]"}],"==","cH0"}],",",RowBox[{RowBox[{"dB","[",RowBox[{"0"}],"]"}],"==","dB0"}],",",RowBox[{RowBox[{"dF","[",RowBox[{"0"}],"]"}],"==","dF0"}],",",RowBox[{RowBox[{"k","[",RowBox[{"0"}],"]"}],"==","k0"}],",","\[IndentingNewLine]"
+,RowBox[{RowBox[{"l","[",RowBox[{"0"}],"]"}],"==","l0"}],",",RowBox[{RowBox[{"mB","[",RowBox[{"0"}],"]"}],"==","mB0"}],",",RowBox[{RowBox[{"mF","[",RowBox[{"0"}],"]"}],"==","mF0"}],",",RowBox[{RowBox[{"mG","[",RowBox[{"0"}],"]"}],"==","mG0"}],",","\[IndentingNewLine]"
+,RowBox[{RowBox[{"mH","[",RowBox[{"0"}],"]"}],"==","mH0"}],",",RowBox[{RowBox[{"nF","[",RowBox[{"0"}],"]"}],"==","nF0"}],",",RowBox[{RowBox[{"nH","[",RowBox[{"0"}],"]"}],"==","nH0"}],",",RowBox[{RowBox[{"nZB","[",RowBox[{"0"}],"]"}],"==","nZB0"}],",","\[IndentingNewLine]"
+,RowBox[{RowBox[{"p","[",RowBox[{"0"}],"]"}],"==","p0"}],",",RowBox[{RowBox[{"ps","[",RowBox[{"0"}],"]"}],"==","ps0"}],",",RowBox[{RowBox[{"r","[",RowBox[{"0"}],"]"}],"==","r0"}],",",RowBox[{RowBox[{"rZB","[",RowBox[{"0"}],"]"}],"==",RowBox[List["-", RowBox[List["(", RowBox[List["mF0", "+", "mH0", "+", "mB0", "+", "mG0"]], ")"]]]]}],",","\[IndentingNewLine]"
+,RowBox[{RowBox[{"s","[",RowBox[{"0"}],"]"}],"==","s0"}],",",RowBox[{RowBox[{"w","[",RowBox[{"0"}],"]"}],"==","w0"}],"\[IndentingNewLine]"
+}],"}"}],";"}]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[{"{",RowBox[{"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{aB0,",","0"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{aH0,",","0"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{aZB0,",","0"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{cG0,",","0.3"}],"}"}],",","0",",","1"}],"}"}],",","\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{cH0,",","0.8"}],"}"}],",","0.5",",","1.2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{dB0,",","-1"}],"}"}],",","-2",",","0"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{dF0,",","-4"}],"}"}],",","-5",",","-1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{k0,",","1.5"}],"}"}],",","0",",","3"}],"}"}],",","\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{l0,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{mB0,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{mF0,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{mG0,",","1"}],"}"}],",","0",",","2"}],"}"}],",","\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{mH0,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{nF0,",","0"}],"}"}],",","0",",","1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{nH0,",","0"}],"}"}],",","0",",","1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{nZB0,",","0"}],"}"}],",","0",",","1"}],"}"}],",","\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{p0,",","1"}],"}"}],",","0.5",",","1.5"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{ps0,",","0"}],"}"}],",","-0.1",",","0.1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{r0,",","0.02"}],"}"}],",","0",",","0.2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{s0,",","1"}],"}"}],",","0",",","2"}],"}"}],",","\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{w0,",","1"}],"}"}],",","0",",","2"}],"}"}],",","\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]FdF,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Fk,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Fl,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Fp,",","0.1"}],"}"}],",","0",",","0.5"}],"}"}],",","\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Fr,",","0"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Fs,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Fw,",","0"}],"}"}],",","0",",","2"}],"}"}],",","\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]GcG,",","1"}],"}"}],",","0",",","2"}],"}"}],",","\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]HaH,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]HcH,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Hl,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]HmH,",","1"}],"}"}],",","0",",","2"}],"}"}],",","\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Hr,",","0"}],"}"}],",","0",",","2"}],"}"}],",","\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]ZBnZB,",","3"}],"}"}],",","0",",","30"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]ZBp,",","0"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]ZBps,",","0"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]ZBr,",","3"}],"}"}],",","0",",","10"}],"}"}],",","\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Alpha],",","0.5"}],"}"}],",","0",",","1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Beta],",","1"}],"}"}],",","0",",","1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Delta],",","0.5"}],"}"}],",","0",",","1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Gamma]G,",","0.3"}],"}"}],",","0",",","1"}],"}"}],",","\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Gamma]H,",","0.3"}],"}"}],",","0",",","1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Tau]H,",","0.3"}],"}"}],",","0",",","1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{dpdach,",","0.1"}],"}"}],",","0",",","1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{ldach,",","1"}],"}"}],",","0",",","2"}],"}"}],",","\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{mHdach,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{pdach,",","0.02"}],"}"}],",","0",",","0.1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{sdach,",","1"}],"}"}],",","0",",","2"}],"}"}],",","\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{tmax,",",30}],"}"}],",",0,",",100}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{plotmax,",",2.5}],"}"}],",",0,",",20}],"}"}],"\[IndentingNewLine]"
+}],"}"}]}],"\[IndentingNewLine]"
+}]], "Input"]
+}]

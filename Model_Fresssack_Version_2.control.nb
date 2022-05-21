@@ -1,0 +1,38 @@
+Notebook[{
+Cell[
+RowBox[{RowBox[{ClearAll,"[","\"\<Global`*\>\"","]"}]}], "Input"],
+Cell[
+BoxData[
+RowBox[{RowBox[List[RowBox[List["SetOptions", "[", RowBox[List["Plot", ",", RowBox[List["ImageSize", "\[Rule]", "350"]]]], "]"]], ";"]], "\[IndentingNewLine]"
+}]], "Input"],
+Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"(*",RowBox[{"Algebraische"," ","Variablen"}],"*)"}]}],"\[IndentingNewLine]"
+}]], "Input"],
+Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"(*",RowBox[{"Agenten"," ","/"," ","Nutzenfunktionen"}],"*)"}]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["A", ":=", RowBox[List[SuperscriptBox[RowBox[List["x", "[", "t", "]"]], "\[Gamma]1"], "-", SuperscriptBox[RowBox[List["xx", "[", "t", "]"]], "\[Gamma]2"]]]]]}],"\[IndentingNewLine]"
+}]], "Input"],
+Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"(*",RowBox[{"Zwangsbedingungen"}],"*)"}]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[List["1", ":=", RowBox[List[RowBox[List["-", RowBox[List["x", "[", "t", "]"]]]], "+", RowBox[List["\[Sigma]", " ", RowBox[List["xx", "[", "t", "]"]]]], "+", RowBox[List[SuperscriptBox["xx", "\[Prime]", Rule[MultilineFunction, None]], "[", "t", "]"]]]]]]}],"\[IndentingNewLine]"
+}]], "Input"],
+Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"(*",RowBox[{"Anfangsbedingungen"," ","und"," ","Werte"}],"*)"}]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[{"init","=",RowBox[{"{",RowBox[{"\[IndentingNewLine]"
+,RowBox[{RowBox[{"x","[",RowBox[{"0"}],"]"}],"==","x0"}],",",RowBox[{RowBox[{"xx","[",RowBox[{"0"}],"]"}],"==","xx0"}],"\[IndentingNewLine]"
+}],"}"}],";"}]}],"\[IndentingNewLine]"
+,RowBox[{RowBox[{"{",RowBox[{"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{x0,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{xx0,",","0.5"}],"}"}],",","0",",","2"}],"}"}],",","\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Ax,",","1"}],"}"}],",","0",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Mu]Axx,",","1"}],"}"}],",","0",",","2"}],"}"}],",","\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Gamma]1,",","0.5"}],"}"}],",","0",",","1"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Gamma]2,",","1.5"}],"}"}],",","1",",","2"}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{\[Sigma],",","0.5"}],"}"}],",","0",",","1"}],"}"}],",","\[IndentingNewLine]"
+,"\[IndentingNewLine]"
+,RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{tmax,",",30}],"}"}],",",0,",",100}],"}"}],",",RowBox[{"{",RowBox[{RowBox[{"{",RowBox[{plotmax,",",2.5}],"}"}],",",0,",",20}],"}"}],"\[IndentingNewLine]"
+}],"}"}]}],"\[IndentingNewLine]"
+}]], "Input"]
+}]

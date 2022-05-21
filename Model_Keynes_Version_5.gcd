@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gcd-model>
+    <algebraic-variables/>
+    <agents>
+        <agent>
+            <name>F</name>
+            <function>-(idach - inv[t])^2/2</function>
+            <plotColor>Blue</plotColor>
+            <plotLineStyle>Full</plotLineStyle>
+            <plotThickness>2.0</plotThickness>
+        </agent>
+        <agent>
+            <name>H</name>
+            <function>-(sdach - spar[t])^2/2</function>
+            <plotColor>Green</plotColor>
+            <plotLineStyle>Full</plotLineStyle>
+            <plotThickness>2.0</plotThickness>
+        </agent>
+    </agents>
+    <constraints>
+        <constraint>
+            <function>inv[t] - spar[t]</function>
+            <description>inv[t]-spar[t]</description>
+        </constraint>
+    </constraints>
+    <variables>
+        <variable>
+            <name>inv</name>
+            <startValue>0.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>5.0</maxValue>
+            <initialConditions>inv0</initialConditions>
+            <plotColor>Red</plotColor>
+            <plotThickness>4.0</plotThickness>
+        </variable>
+        <variable>
+            <name>spar</name>
+            <initialConditions>inv0</initialConditions>
+            <plotColor>Green</plotColor>
+            <plotThickness>2.0</plotThickness>
+        </variable>
+    </variables>
+    <parameters>
+        <parameter>
+            <name>idach</name>
+            <startValue>4.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>5.0</maxValue>
+        </parameter>
+        <parameter>
+            <name>sdach</name>
+            <startValue>2.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>5.0</maxValue>
+        </parameter>
+    </parameters>
+    <change-mu>
+        <mu>
+            <name>\[Mu]Finv</name>
+            <startValue>10.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>10.0</maxValue>
+        </mu>
+        <mu>
+            <name>\[Mu]Hspar</name>
+            <startValue>0.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>10.0</maxValue>
+        </mu>
+    </change-mu>
+    <plots>
+        <plot>
+            <name>Keynes versus Neoklassik</name>
+            <plotStyle>PLOTSTYLEKeynesversusNeoklassik</plotStyle>
+            <plotParameter>{t,0,2}</plotParameter>
+            <plotRange>5</plotRange>
+            <showPlotLabels>true</showPlotLabels>
+            <showLegendLabels>true</showLegendLabels>
+            <algebraic-variables/>
+            <agents>
+                <agent>
+                    <addDepended>true</addDepended>
+                    <name>F</name>
+                </agent>
+                <agent>
+                    <addDepended>true</addDepended>
+                    <name>H</name>
+                </agent>
+            </agents>
+            <variables/>
+        </plot>
+    </plots>
+    <mathematicaNDSolveFile>D:\Dropbox\1a Principia Ökonomika\2. Ökonomiae Prinzipia Mathematica\1a Fassungen Bd 2 ab 18.11.21\Publikationen\Modelle ABC\Modelle ABC GCDkonfigurator\KEYNES\Keynes Version 5.ndsolve.nb</mathematicaNDSolveFile>
+    <mathematicaModelicaFile>D:\Dropbox\1a Principia Ökonomika\2. Ökonomiae Prinzipia Mathematica\1a Fassungen Bd 2 ab 18.11.21\Publikationen\Modelle ABC\Modelle ABC GCDkonfigurator\KEYNES\Keynes Version 5.modelica.nb</mathematicaModelicaFile>
+    <mathematicaControlFile>D:\Dropbox\1a Principia Ökonomika\2. Ökonomiae Prinzipia Mathematica\1a Fassungen Bd 2 ab 18.11.21\Publikationen\Modelle ABC\Modelle ABC GCDkonfigurator\KEYNES\Keynes Version 5.control.nb</mathematicaControlFile>
+    <ndSolveMethod>Automatic</ndSolveMethod>
+</gcd-model>

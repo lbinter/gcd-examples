@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<gcd-model>
+    <algebraic-variables/>
+    <agents>
+        <agent>
+            <name>A</name>
+            <function>x[t]^γ1 - xx[t]^γ2</function>
+            <plotColor>Magenta</plotColor>
+            <plotLineStyle></plotLineStyle>
+            <plotThickness>1.0</plotThickness>
+        </agent>
+    </agents>
+    <constraints>
+        <constraint>
+            <function>-x[t] + σ xx[t] + xx'[t]</function>
+        </constraint>
+    </constraints>
+    <variables>
+        <variable>
+            <name>x</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+            <initialConditions>x0</initialConditions>
+            <plotColor>Black</plotColor>
+            <plotThickness>2.0</plotThickness>
+        </variable>
+        <variable>
+            <name>xx</name>
+            <startValue>0.5</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+            <initialConditions>xx0</initialConditions>
+            <plotColor>Red</plotColor>
+            <plotThickness>2.0</plotThickness>
+        </variable>
+    </variables>
+    <parameters>
+        <parameter>
+            <name>\[Gamma]1</name>
+            <startValue>0.5</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>1.0</maxValue>
+        </parameter>
+        <parameter>
+            <name>\[Gamma]2</name>
+            <startValue>1.5</startValue>
+            <minValue>1.0</minValue>
+            <maxValue>2.0</maxValue>
+        </parameter>
+        <parameter>
+            <name>\[Sigma]</name>
+            <startValue>0.5</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>1.0</maxValue>
+        </parameter>
+    </parameters>
+    <change-mu>
+        <mu>
+            <name>\[Mu]Ax</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+        </mu>
+        <mu>
+            <name>\[Mu]Axx</name>
+            <startValue>1.0</startValue>
+            <minValue>0.0</minValue>
+            <maxValue>2.0</maxValue>
+        </mu>
+    </change-mu>
+    <plots>
+        <plot>
+            <name>Agent A</name>
+            <plotStyle>PLOTSTYLEAgentA</plotStyle>
+            <plotParameter>{t,0,8}</plotParameter>
+            <plotRange>1</plotRange>
+            <showPlotLabels>true</showPlotLabels>
+            <showLegendLabels>true</showLegendLabels>
+            <algebraic-variables/>
+            <agents>
+                <agent>
+                    <addDepended>true</addDepended>
+                    <name>A</name>
+                </agent>
+            </agents>
+            <variables/>
+        </plot>
+    </plots>
+    <mathematicaNDSolveFile>D:\Dropbox\1a Principia Ökonomika\2. Ökonomiae Prinzipia Mathematica\1a Fassungen Bd 2 ab 18.11.21\Publikationen\Modelle ABC\Modelle ABC GCDkonfigurator\Fresssack\Modell Fresssack Version 2.ndsolve.nb</mathematicaNDSolveFile>
+    <mathematicaModelicaFile>D:\Dropbox\1a Principia Ökonomika\2. Ökonomiae Prinzipia Mathematica\1a Fassungen Bd 2 ab 18.11.21\Publikationen\Modelle ABC\Modelle ABC GCDkonfigurator\Fresssack\Modell Fresssack Version 2.modelica.nb</mathematicaModelicaFile>
+    <mathematicaControlFile>D:\Dropbox\1a Principia Ökonomika\2. Ökonomiae Prinzipia Mathematica\1a Fassungen Bd 2 ab 18.11.21\Publikationen\Modelle ABC\Modelle ABC GCDkonfigurator\Fresssack\Modell Fresssack Version 2.control.nb</mathematicaControlFile>
+    <ndSolveMethod>Automatic</ndSolveMethod>
+</gcd-model>
